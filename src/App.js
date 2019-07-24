@@ -49,12 +49,12 @@ class App extends Component {
       Clarifai.FACE_DETECT_MODEL, 
       this.state.input)
     .then(
-    function(response) {
+    (response) => {
       console.log(response.outputs[0].data.regions[0].region_info.bounding_box);
       this.setState({fetchFailed:false});
       
     },
-    function(err) {
+    (err) => {
      console.log(err, 'Whups'); 
      console.log(this.state.fetchFailed);
      this.setState({fetchFailed: true});
